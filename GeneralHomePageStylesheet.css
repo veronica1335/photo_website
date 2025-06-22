@@ -1,5 +1,5 @@
 /* GENERAL FORMATTING */
-.Header
+.header
  {
  width: 800px;
  margin-left:auto;
@@ -8,7 +8,7 @@
  }
 
  body {
-  background-image: url("BookFlowerPicture.jpg");
+  background-image: url("./photo_page/BookFlowerPicture.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;  
   background-size: cover;
