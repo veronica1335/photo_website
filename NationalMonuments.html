@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <link rel = "stylesheet" type = "text/css" href = "PortfolioStylesheet.css"/>
+  </head>
+
+  <body>
+    <h1><center><img src="Logo.png" alt="Image" height="250" width="500"/></center></h1>
+    <center><a href="index.html" class="button"><span>HOME</span></a>
+      <a href="PhotoPage.html" class="button"><span>PORTFOLIO</span></a>
+      <a href="BlackWhite.html" class="button"><span>BLACK & WHITE</span></a>
+      <a href="Blog.html" class="button"><span>BLOG</span></a>
+      <a href="Travels.html" class="button"><span>TRAVELS</span></a></center>
+
+      <center><a href="NationalParks.html" class="button"><span>National Parks</span></a>
+        <a href="NationalMonuments.html" class="clicked_button"><span>National Monuments</span></a>
+        <a href="Alaska.html" class="button"><span>Alaska</span></a>
+        <a href="Spain.html" class="button"><span>Spain</span></a></center>
+
+        <div class="slideshow-row">
+          <div class="slideshow-group">
+            <p style="text-indent: 50px;", class="tight-text">Muir Woods National Monument (California)</p>
+            <div class="slideshow-container">
+              <div class='Muir Woods Slides'><img src="./National Monuments/Muir Woods/DSC_0073.JPG" style="width:100%"></div>
+              <div class="Muir Woods Slides"><img src="./National Monuments/Muir Woods/DSC_0132.JPG" style="width:100%"></div>
+              <div class="Muir Woods Slides"><img src="./National Monuments/Muir Woods/IMG_0101_VSCO.JPG" style="width:100%"></div>
+              <div class="Muir Woods Slides"><img src="./National Monuments/Muir Woods/DSC_0176.JPG" style="width:100%"></div>
+            </div>
+
+            <div class="thumbnail-bar">
+              <img class="Muir Woods Thumbnail" src="./National Monuments/Muir Woods/DSC_0073.JPG" onclick="currentSlide(1, 0)">
+              <img class="Muir Woods Thumbnail" src="./National Monuments/Muir Woods/DSC_0132.JPG" onclick="currentSlide(2, 0)">
+              <img class="Muir Woods Thumbnail" src="./National Monuments/Muir Woods/IMG_0101_VSCO.JPG" onclick="currentSlide(3, 0)">
+              <img class="Muir Woods Thumbnail" src="./National Monuments/Muir Woods/DSC_0176.JPG" onclick="currentSlide(4, 0)">
+            </div>
+          </div>
+
+          <div class="slideshow-group">
+            <p style="text-indent: 48px;", class="tight-text">Natural Bridges National Monument (Utah)</p>
+            <div class="slideshow-container">
+              <div class="Natural Bridges Slides"><img src="./National Monuments/Natural Bridges/aerial view of bridge.jpg" style="width:100%"></div>
+              <div class="Natural Bridges Slides"><img src="./National Monuments/Natural Bridges/DSC_0232.JPG" style="width:100%"></div>
+              <div class="Natural Bridges Slides"><img src="./National Monuments/Natural Bridges/DSC_0245.JPG" style="width:100%"></div>
+              <div class="Natural Bridges Slides"><img src="./National Monuments/Natural Bridges/zoom out view of bridge.jpg" style="width:100%"></div>
+              <div class="Natural Bridges Slides"><img src="./National Monuments/Natural Bridges/aerial view.jpg" style="width:100%"></div>
+            </div>
+
+            <div class="thumbnail-bar">
+              <img class="Natural Bridges Thumbnail" src="./National Monuments/Natural Bridges/aerial view of bridge.jpg" onclick="currentSlide(1, 0)">
+              <img class="Natural Bridges Thumbnail" src="./National Monuments/Natural Bridges/DSC_0232.JPG" onclick="currentSlide(2, 0)">
+              <img class="Natural Bridges Thumbnail" src="./National Monuments/Natural Bridges/DSC_0245.JPG" onclick="currentSlide(3, 0)">
+              <img class="Natural Bridges Thumbnail" src="./National Monuments/Natural Bridges/zoom out view of bridge.jpg" onclick="currentSlide(4, 0)">
+              <img class="Natural Bridges Thumbnail" src="./National Monuments/Natural Bridges/aerial view.jpg" onclick="currentSlide(5, 0)">
+            </div>
+          </div>
+        </div>
+      
+        <script>
+          let slideIndex = [1,1];
+          let slideId = ["Muir Woods Slides", "Natural Bridges Slides"];
+          
+          function showSlides(n, no) {
+            let i;
+            let x = document.getElementsByClassName(slideId[no]);
+            if (n > x.length) { slideIndex[no] = 1 }
+            if (n < 1) { slideIndex[no] = x.length }
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
+            }
+            x[slideIndex[no] - 1].style.display = "block";
+          }
+          
+          function currentSlide(n, no) {
+            showSlides(slideIndex[no] = n, no);
+          }
+          
+          // Optional: start auto slides
+          function startAutoSlides(no, intervalMs) {
+            setInterval(function() {
+              slideIndex[no]++;
+              showSlides(slideIndex[no], no);
+            }, intervalMs);
+          }
+          
+          showSlides(1, 0);
+          showSlides(1, 1);
+          startAutoSlides(0, 3000);
+          startAutoSlides(1, 3000);
+        </script>
+      
+  </body>
+</html>
