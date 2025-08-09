@@ -11,31 +11,91 @@
       <a href="Blog.html" class="button"><span>BLOG</span></a>
       <a href="Travels.html" class="button"><span>TRAVELS</span></a></center>
 
-      <h2>Red Rose and it's Petals</h2>
-      <h4>May 12, 2022</h4>
-      <p>Messing around with a red rose and fresh and slightly dead petals for color variety. Used a large version (hardcover) of <i>The Da Vinci Code</i> with 
-      illustrations in it. Also used a large wine glass and a white bedsheet for the backdrop.</p>
-      <div class="row">
-        <div class="column">
-          <img src="./blog/WineRoseBookManyPetals.jpg" alt="Book with Wine Glass with Rose" style="width:100%">
+      <div class="blog-entry">
+        <div class="slideshow-column">
+          <p style="text-indent: 48px;", class="tight-text"><strong>Hanging Lake, Colorado (July 16, 2025)</strong></p>
+          <div class="slideshow-container">
+            <div class="Hanging Lake Slides"><img src="./blog/Hanging Lake/DSC_072_lightroom3.jpg"></div>
+            <div class="Hanging Lake Slides"><img src="./blog/Hanging Lake/DSC_0208_lightroom.jpg"></div>
+            <div class="Hanging Lake Slides"><img src="./blog/Hanging Lake/DSC_0144_lightroom.jpg"></div>
+            <div class="Hanging Lake Slides"><img src="./blog/Hanging Lake/DSC_053_lightroom.jpg"></div>
+          </div>
+
+          <div class="thumbnail-bar">
+            <img class="Hanging Lake Thumbnail" src="./blog/Hanging Lake/DSC_072_lightroom3.jpg" onclick="currentSlide(1, 0)">
+            <img class="Hanging Lake Thumbnail" src="./blog/Hanging Lake/DSC_0208_lightroom.jpg" onclick="currentSlide(2, 0)">
+            <img class="Hanging Lake Thumbnail" src="./blog/Hanging Lake/DSC_0144_lightroom.jpg" onclick="currentSlide(3, 0)">
+            <img class="Hanging Lake Thumbnail" src="./blog/Hanging Lake/DSC_053_lightroom.jpg" onclick="currentSlide(4, 0)">
+          </div>
         </div>
-        <div class="column">
-          <img src="./blog/ZoomedInWineGlassRose.jpg" alt="Up Close of Wine Glass with Rose" style="width:100%">
-        </div>
-        <div class="column">
-          <img src="./blog/RoseOnBook.jpg" alt="Rose on the Book" style="width:100%">
-        </div>
-      </div>
-      <div class="row">
-        <div class="column">
-          <img src="./blog/RoseWithFewPetals.jpg" alt="Rose with a Few Petals" style="width:100%">
-        </div>
-        <div class="column">
-          <img src="./blog/FlowersInEnvelope.jpg" alt="Flowers in an Envelope" style="width:100%">
-        </div>
-        <div class="column">
-          <img src="./blog/WineGlassRoseUpClose.jpg" alt="New Angle of Up Close of Wine Glass with Rose" style="width:100%">
+
+        <div class="description-column">
+          <p>Went hiking at Hanging Lake which is a National Natural Landmark near Glenwood Springs, Colorado. 
+            The hike itself wasn't too hard with an elevation gain of about 1,200 feet and the views at the top were phenomenal.</p>
         </div>
       </div>
+
+      <div class="blog-entry">
+        <div class="slideshow-column">
+          <p style="text-indent: 48px;", class="tight-text"><strong>Red Roses Photoshoot (May 12, 2022)</strong></p>
+          <div class="slideshow-container">
+            <div class="Red Roses Slides"><img src="./blog/Red Roses/WineRoseBookManyPetals.jpg" style="width:100%"></div>
+            <div class="Red Roses Slides"><img src="./blog/Red Roses/ZoomedInWineGlassRose.jpg" style="width:100%"></div>
+            <div class="Red Roses Slides"><img src="./blog/Red Roses/RoseOnBook.jpg" style="width:100%"></div>
+            <div class="Red Roses Slides"><img src="./blog/Red Roses/RoseWithFewPetals.jpg" style="width:100%"></div>
+            <div class="Red Roses Slides"><img src="./blog/Red Roses/FlowersInEnvelope.jpg" style="width:100%"></div>
+            <div class="Red Roses Slides"><img src="./blog/Red Roses/WineGlassRoseUpClose.jpg" style="width:100%"></div>
+          </div>
+          
+          <div class="thumbnail-bar">
+            <img class="Red Roses Thumbnail" src="./blog/Red Roses/WineRoseBookManyPetals.jpg" onclick="currentSlide(1, 0)">
+            <img class="Red Roses Thumbnail" src="./blog/Red Roses/ZoomedInWineGlassRose.jpg" onclick="currentSlide(2, 0)">
+            <img class="Red Roses Thumbnail" src="./blog/Red Roses/RoseOnBook.jpg" onclick="currentSlide(3, 0)">
+            <img class="Red Roses Thumbnail" src="./blog/Red Roses/RoseWithFewPetals.jpg" onclick="currentSlide(4, 0)">
+            <img class="Red Roses Thumbnail" src="./blog/Red Roses/FlowersInEnvelope.jpg" onclick="currentSlide(5, 0)">
+            <img class="Red Roses Thumbnail" src="./blog/Red Roses/WineGlassRoseUpClose.jpg" onclick="currentSlide(6, 0)">
+          </div>
+        </div>
+
+        <div class="description-column">
+          <p>Messing around with a red rose and fresh and slightly dead petals for color variety. Used a large version (hardcover)
+            of <i>The Da Vinci Code</i> with illustrations in it. Also used a large wine glass and a white bedsheet for the backdrop.</p>
+        </div>
+      </div>
+  
+          
+
+      <script>
+        let slideIndex = [1,1];
+        let slideId = ["Hanging Lake Slides", "Red Roses Slides"];
+        
+        function showSlides(n, no) {
+          let i;
+          let x = document.getElementsByClassName(slideId[no]);
+          if (n > x.length) { slideIndex[no] = 1 }
+          if (n < 1) { slideIndex[no] = x.length }
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          x[slideIndex[no] - 1].style.display = "block";
+        }
+        
+        function currentSlide(n, no) {
+          showSlides(slideIndex[no] = n, no);
+        }
+        
+        // Optional: start auto slides
+        function startAutoSlides(no, intervalMs) {
+          setInterval(function() {
+            slideIndex[no]++;
+            showSlides(slideIndex[no], no);
+          }, intervalMs);
+        }
+        
+        showSlides(1, 0);
+        showSlides(1, 1);
+        startAutoSlides(0, 3000);
+        startAutoSlides(1, 3000);
+      </script>
   </body>
 </html>

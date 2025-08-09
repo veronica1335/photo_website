@@ -35,7 +35,7 @@ li {
   border-color: white;
   border-width: 2px;
   color: black;
-  padding: 5px 18px;
+  padding: 5px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -209,3 +209,34 @@ img {vertical-align: middle;}
 .thumbnail:hover {
   border: 2px solid #555;
 }
+
+/* Blog columns */
+.blog-entry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* ✅ vertically centers the columns */
+  gap: 0px;
+  margin-bottom: 50px;
+}
+
+.slideshow-column {
+  flex: 1 1 52%;
+  max-width: 52%;
+}
+
+.description-column {
+  flex: 1 1 40%;
+  max-width: 40%;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .blog-entry {
+    flex-direction: column;
+  }
+  .slideshow-column, .description-column {
+    max-width: 100%;
+  }
+}
+
