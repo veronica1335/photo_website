@@ -20,14 +20,6 @@ li {
   margin-bottom: 5px;
 }
 
-/* li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 5px;
-  text-decoration: none;
-} */
-
 /* BUTTON FORMATTING */
 .button {
   background-color: clear;
@@ -106,7 +98,7 @@ img {vertical-align: middle;}
 
 .slideshow-container {
   margin-left: 50px;
-  width: 600px;     /* Set your desired width */
+  width: 590px;     /* Set your desired width */
   height: 400px;    /* Set your desired height */
   position: relative;
   overflow: hidden; /* Prevent overflow if images are too large */
@@ -115,9 +107,10 @@ img {vertical-align: middle;}
 .slideshow-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures image fills container while maintaining aspect ratio */
+  object-fit: contain; /* was previously cover */
   border: 10px solid black; /* ✅ Black border around each image */
   box-sizing: border-box;   /* ✅ Ensures border doesn't overflow container */
+  background-color: black;
 }
 
 /* Next & previous buttons */
@@ -125,22 +118,26 @@ img {vertical-align: middle;}
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
+  transform: translateY(-50%);
   padding: 16px;
-  margin-top: -22px;
   color: white;
   font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  font-size: 22px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 3px;
   user-select: none;
+  z-index: 10;
 }
 
-/* Position the "next button" to the right */
+/* Left arrow */
+.prev {
+  left: 10px;
+}
+
+/* Right arrow */
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-} */
+  right: 10px;
+}
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
@@ -189,25 +186,15 @@ img {vertical-align: middle;}
   animation-duration: 3s;
 }
 
-/* Thumbnail styling */
-.thumbnail-bar {
+.slide-counter {
+  width: 600px;
   margin-left: 50px;
-  display: flex;
-  gap: 0px;
-  margin-top: 10px;
-}
+  text-align: center;
+  margin-top: 8px;
 
-.thumbnail {
-  width: 60px;
-  height: 40px;
-  object-fit: cover;
-  cursor: pointer;
-  border: 3px solid black;
-  transition: border 0.3s;
-}
-
-.thumbnail:hover {
-  border: 2px solid #555;
+  font-size: 16px;
+  font-family: Calibri;
+  color: black;
 }
 
 /* Blog columns */
