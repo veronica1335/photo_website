@@ -1,0 +1,167 @@
+.header {
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: clear;
+}
+
+li {
+  float: left;
+  border-right:1px solid clear;
+  padding: 15px 5px;
+  text-align: center;
+}
+
+.tight-text {
+  margin-bottom: 0px;
+}
+
+/* BUTTON FORMATTING */
+.button {
+  background-color: clear;
+  border: solid;
+  border-color: white;
+  border-width: 2px;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Calibri;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: white;
+  color: gray;
+}
+
+/* Green */
+.clicked_button {
+  background-color: clear;
+  border-bottom: 2px solid black;
+  color: black;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Calibri;
+  margin: 4px 15px;
+  cursor: pointer;
+}
+
+.clicked_button:hover {
+  background-color: white;
+  color: gray;
+}
+
+.tooltip {
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.city-marker:hover .tooltip {
+    opacity: 1;
+}
+
+.city-dot:hover + .tooltip {
+    opacity: 1;
+}
+
+/* Image Gallery */
+.column {
+  float: left;
+  width: 32%;
+  padding: 10px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Map */
+::-webkit-scrollbar-thumb {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #466b47;
+}
+
+.world-map {
+    position: relative;
+    min-height: 20em;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Outlines the countries */
+.world-map svg path {
+    stroke: rgb(93, 3, 134);
+    stroke-width: 1;
+}
+
+svg {
+    width: 100vw;
+    /* height: auto; */
+    height: calc(100vh - 400px);
+}
+
+path {
+    fill: #dcbfff;
+    stroke: #dcbfff;
+    transition: 100ms;
+}
+
+path:hover {
+    fill: #c99aff;
+}
+
+.map-wrapper {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.map-image {
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* allows clicks to pass through unless on dots */
+    overflow: visible;   /* <-- add this */
+}
+
+.city-dot {
+    fill: rgb(255, 9, 9);
+    pointer-events: all; /* makes dots clickable */
+}
+
+.tooltip {
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}

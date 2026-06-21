@@ -1,0 +1,253 @@
+.header {
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: clear;
+}
+
+li {
+  float: left;
+  border-right:1px solid clear;
+  padding: 15px 5px;
+  text-align: center;
+}
+
+.tight-text {
+  margin-bottom: 0px;
+}
+
+/* BUTTON FORMATTING */
+.button {
+  background-color: clear;
+  border: solid;
+  border-color: white;
+  border-width: 2px;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Calibri;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: white;
+  color: gray;
+}
+
+/* Green */
+.clicked_button {
+  background-color: clear;
+  border-bottom: 2px solid black;
+  color: black;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Calibri;
+  margin: 4px 15px;
+  cursor: pointer;
+}
+
+.clicked_button:hover {
+  background-color: white;
+  color: gray;
+}
+
+
+/* City dot hovering feature */
+.city-dot {
+    fill: yellow;
+    cursor: pointer;
+}
+
+.tooltip {
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.city-marker:hover .tooltip {
+    opacity: 1;
+}
+
+.city-dot:hover + .tooltip {
+    opacity: 1;
+}
+
+/* Image Gallery */
+.column {
+  float: left;
+  width: 32%;
+  padding: 10px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Map */
+::-webkit-scrollbar-thumb {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #466b47;
+}
+
+.world-map {
+    position: relative;
+    min-height: 20em;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Outlines the countries */
+.world-map svg path {
+    stroke: rgb(93, 3, 134);
+    stroke-width: 1;
+}
+
+svg {
+    width: 100vw;
+    /* height: auto; */
+    height: calc(100vh - 400px);
+}
+
+path {
+    fill: #dcbfff;
+    stroke: #dcbfff;
+    transition: 100ms;
+}
+
+path:hover {
+    fill: #c99aff;
+}
+
+/* Antigua and Barbuda */
+#antigua_barbuda path {
+    fill: #dcbfff;
+    transition: fill 0.2s ease;
+}
+
+#antigua_barbuda:hover path {
+    fill: #c99aff;
+}
+
+/* Bahamas */
+#bahamas path {
+    fill: #dcbfff;
+    transition: fill 0.2s ease;
+}
+
+#bahamas:hover path {
+    fill: #c99aff;
+}
+
+/* Canada */
+#canada path {
+    fill: #90ff92;
+    transition: fill 0.2s ease;
+}
+
+#canada:hover path {
+    fill: rgb(2, 247, 96);
+}
+
+/* Chile */
+#chile path {
+    fill: #dcbfff;
+    transition: fill 0.2s ease;
+}
+
+#chile:hover path {
+    fill: #c99aff;
+}
+
+/* France */
+#france path {
+    fill: #90ff92;
+    transition: fill 0.2s ease;
+}
+
+#france:hover path {
+    fill: rgb(2, 247, 96);
+}
+
+/* Greece */
+#greece path {
+    fill: #90ff92;
+    transition: fill 0.2s ease;
+}
+
+#greece:hover path {
+    fill: rgb(2, 247, 96);
+}
+
+/* Indonesia */
+#indonesia path {
+    fill: #dcbfff;
+    transition: fill 0.2s ease;
+}
+
+#indonesia:hover path {
+    fill: #c99aff;
+}
+
+/* New Zealand */
+#newzealand path {
+    fill: #dcbfff;
+    transition: fill 0.2s ease;
+}
+
+#newzealand:hover path {
+    fill: #c99aff;
+}
+
+/* Russia */
+#russia path {
+    fill: #dcbfff;
+    transition: fill 0.2s ease;
+}
+
+#russia:hover path {
+    fill: #c99aff;
+}
+
+/* United Kingdom */
+#unitedkingdom path {
+    fill: #dcbfff;
+    transition: fill 0.2s ease;
+}
+
+#unitedkingdom:hover path {
+    fill: #c99aff;
+}
+
+/* USA */
+#usa path {
+    fill: #dcbfff;
+    transition: fill 0.2s ease;
+}
+
+#usa:hover path {
+    fill: #c99aff;
+}
